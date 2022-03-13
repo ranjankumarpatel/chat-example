@@ -1,0 +1,17 @@
+handleOpen() {
+        // let result = JSON.parse(data);
+        // this.setState({count: this.state.count + result.movement});
+        this.setState(prevState => ({
+            count: prevState.count + 1
+        }));
+    }
+
+    handleData(data) {
+        // let result = JSON.parse(data);
+
+        console.log(data)
+    }
+
+    <Websocket url='ws://localhost:3000/ws'
+                                   onOpen={this.handleOpen.bind(this)}
+                                   onMessage={this.handleData.bind(this)}/>
